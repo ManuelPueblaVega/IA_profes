@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación: Propuesta de IA Generativa para Profesores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style for the slides */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+            transform: scale(0.95);
+        }
+        /* Active slide will be visible and scaled to normal */
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+            z-index: 10;
+        }
+        /* Custom styles for progress bar */
+        #progressBar {
+            transition: width 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white overflow-hidden">
+
+    <!-- Presentation Container -->
+    <main id="presentation-container" class="relative w-full h-screen">
+
+        <!-- Slide 1: Sesión 1 -->
+        <div class="slide active bg-gradient-to-br from-blue-900 to-indigo-900" data-slide="1">
+            <div class="max-w-4xl w-full text-center">
+                <span class="inline-block bg-blue-400/20 text-blue-300 text-sm font-semibold px-4 py-2 rounded-full mb-6">Sesión 1 de 6</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">IA esencial aplicada al aula</h1>
+                <h2 class="text-2xl md:text-3xl font-light text-blue-300 mb-8">Delegar con criterio (Gemini)</h2>
+                <div class="text-left bg-black/20 p-8 rounded-2xl space-y-4 max-w-3xl mx-auto backdrop-blur-sm border border-white/10">
+                    <p><strong class="font-semibold text-blue-300">Objetivo:</strong> Dominar los conceptos esenciales de IA generativa (LLM, chatbots, sesgos) y aplicar Gemini para diseñar dos clases de 90’ alineadas a OA, dejando un prompt base reutilizable.</p>
+                    <p><strong class="font-semibold text-blue-300">Descripción:</strong> Se levantan los primeros borradores de clases y se formaliza un prompt base (“Creador de clases”) que define estructura, OA y criterios de éxito. Estos borradores son el insumo para S2.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Sesión 2 -->
+        <div class="slide bg-gradient-to-br from-indigo-900 to-purple-900" data-slide="2">
+            <div class="max-w-4xl w-full text-center">
+                <span class="inline-block bg-purple-400/20 text-purple-300 text-sm font-semibold px-4 py-2 rounded-full mb-6">Sesión 2 de 6</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Rigor y evidencia</h1>
+                <h2 class="text-2xl md:text-3xl font-light text-purple-300 mb-8">NotebookLM + Deep Research</h2>
+                <div class="text-left bg-black/20 p-8 rounded-2xl space-y-4 max-w-3xl mx-auto backdrop-blur-sm border border-white/10">
+                    <p><strong class="font-semibold text-purple-300">Objetivo:</strong> Auditar y fortalecer las clases generadas mediante NotebookLM y Deep Research para cerrar brechas, alinear OA y producir recursos de estudio validados con citas.</p>
+                    <p><strong class="font-semibold text-purple-300">Descripción:</strong> Se cargan los productos de S1 en NotebookLM para construir un Resumen de Unidad e identificar huecos. Con fuentes validadas se generan los recursos de estudio.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Sesión 3 -->
+        <div class="slide bg-gradient-to-br from-purple-900 to-pink-900" data-slide="3">
+            <div class="max-w-4xl w-full text-center">
+                <span class="inline-block bg-pink-400/20 text-pink-300 text-sm font-semibold px-4 py-2 rounded-full mb-6">Sesión 3 de 6</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Estándares que escalan</h1>
+                <h2 class="text-2xl md:text-3xl font-light text-pink-300 mb-8">Plantillas y asistentes institucionales</h2>
+                <div class="text-left bg-black/20 p-8 rounded-2xl space-y-4 max-w-3xl mx-auto backdrop-blur-sm border border-white/10">
+                     <p><strong class="font-semibold text-pink-300">Objetivo:</strong> Estandarizar la producción docente creando plantillas maestras y configurando un Gem (Gemini) y un GPT (ChatGPT) capaces de generar guías y rúbricas coherentes.</p>
+                    <p><strong class="font-semibold text-pink-300">Descripción:</strong> A partir de los recursos de S2, se fija una estructura institucional y se construyen 3 plantillas. Luego se configura un Gem y un GPT que producen materiales con el formato del colegio.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 4: Sesión 4 -->
+        <div class="slide bg-gradient-to-br from-pink-900 to-red-900" data-slide="4">
+            <div class="max-w-4xl w-full text-center">
+                <span class="inline-block bg-red-400/20 text-red-300 text-sm font-semibold px-4 py-2 rounded-full mb-6">Sesión 4 de 6</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Creación de microaplicaciones</h1>
+                <h2 class="text-2xl md:text-3xl font-light text-red-300 mb-8">Presentaciones con Gemini (Canva)</h2>
+                <div class="text-left bg-black/20 p-8 rounded-2xl space-y-4 max-w-3xl mx-auto backdrop-blur-sm border border-white/10">
+                    <p><strong class="font-semibold text-red-300">Objetivo:</strong> Utilizar la función de Gemini en Canva para crear microaplicaciones y presentaciones interactivas, generando recursos innovadores que faciliten la enseñanza.</p>
+                    <p><strong class="font-semibold text-red-300">Descripción:</strong> Los participantes se enfocan en diseñar y prototipar microaplicaciones y presentaciones desde Canva integrando Gemini. Estos recursos servirán como insumo para S5.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Sesión 5 -->
+        <div class="slide bg-gradient-to-br from-red-900 to-orange-900" data-slide="5">
+            <div class="max-w-4xl w-full text-center">
+                <span class="inline-block bg-orange-400/20 text-orange-300 text-sm font-semibold px-4 py-2 rounded-full mb-6">Sesión 5 de 6</span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Publicación y automatización</h1>
+                <h2 class="text-2xl md:text-3xl font-light text-orange-300 mb-8">Sitio de Google + AI Studio</h2>
+                <div class="text-left bg-black/20 p-8 rounded-2xl space-y-4 max-w-3xl mx-auto backdrop-blur-sm border border-white/10">
+                     <p><strong class="font-semibold text-orange-300">Objetivo:</strong> Integrar en un Sitio de Google todo el material creado y explorar AI Studio para publicar, automatizar y medir resultados.</p>
+                    <p><strong class="font-semibold text-orange-300">Descripción:</strong> Se consolida el trabajo en un Sitio de Google. Se realiza una introducción a AI Studio, mostrando cómo conectar herramientas para automatizar informes, correos y visualizaciones.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Diagrama -->
+        <div class="slide bg-gradient-to-br from-orange-900 to-slate-900" data-slide="6">
+            <div class="max-w-6xl w-full h-full flex flex-col text-center justify-center p-4">
+                 <h1 class="text-4xl md:text-5xl font-bold mb-4 flex-shrink-0">Diagrama del Proceso</h1>
+                 <div class="bg-black/30 p-4 rounded-2xl border border-white/10 backdrop-blur-sm flex-grow overflow-hidden flex justify-center items-center">
+                    <img src="https://files.catbox.moe/bozlk3.png" alt="Diagrama de flujo de la propuesta" class="max-w-full max-h-full object-contain rounded-lg">
+                 </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Navigation UI -->
+    <footer class="fixed bottom-0 left-0 right-0 p-4 z-20">
+        <div class="max-w-4xl mx-auto flex items-center justify-between bg-black/30 backdrop-blur-sm border border-white/10 p-2 rounded-full">
+            <button id="prevBtn" class="px-5 py-2 text-white rounded-full font-semibold hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+            </button>
+            <div class="text-sm font-medium text-gray-300">
+                <span id="current-slide-num">1</span> / <span id="total-slides-num">6</span>
+            </div>
+            <button id="nextBtn" class="px-5 py-2 text-white rounded-full font-semibold hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/50 transition-all duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </button>
+        </div>
+        <!-- Progress Bar -->
+        <div class="fixed bottom-0 left-0 w-full h-1 bg-white/10">
+            <div id="progressBar" class="h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            const currentSlideNum = document.getElementById('current-slide-num');
+            const totalSlidesNum = document.getElementById('total-slides-num');
+            const progressBar = document.getElementById('progressBar');
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            totalSlidesNum.textContent = totalSlides;
+
+            const showSlide = (index) => {
+                // Remove 'active' from all slides
+                slides.forEach(slide => slide.classList.remove('active'));
+                
+                // Add 'active' to the target slide
+                slides[index].classList.add('active');
+                
+                // Update slide number
+                currentSlideNum.textContent = index + 1;
+
+                // Update progress bar
+                const progressPercentage = ((index + 1) / totalSlides) * 100;
+                progressBar.style.width = `${progressPercentage}%`;
+
+                // Update button states
+                prevBtn.disabled = index === 0;
+                
+                if (index === totalSlides - 1) {
+                    // Optionally change the next button to a finish icon or text
+                }
+            };
+
+            const nextSlide = () => {
+                if (currentSlide < totalSlides - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            };
+            
+            const prevSlide = () => {
+                 if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            };
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    nextSlide();
+                } else if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                }
+            });
+
+            // Initial setup
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
+
